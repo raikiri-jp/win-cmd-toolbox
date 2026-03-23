@@ -1,6 +1,6 @@
 # win-cmd-toolbox
 
-Windows 環境で使えるバッチコマンド集です。主に Windows 11 向けの設定変更やユーティリティスクリプトをまとめています。右クリックメニューの切り替えなど、GUI では手間な操作をワンタッチで行える `.cmd` ファイルを収録しています。
+Windows 環境で使えるバッチコマンド集です。主に Windows 11 向けの設定変更やユーティリティスクリプトをまとめています。右クリックメニューの切り替えなど、GUI では手間な操作をワンタッチで行える `.cmd` ファイルや `ps1` ファイルを収録しています。
 
 ## 📁 ディレクトリ構成
 
@@ -16,6 +16,7 @@ Windows 環境で使えるバッチコマンド集です。主に Windows 11 向
   - restart-explorer.cmd
   - setup.cmd
 - wsl/
+  - install-wsl-no-distribution.ps1
   - install-wsl-al2023.ps1
 
 ## 🛠️ 各スクリプトの説明
