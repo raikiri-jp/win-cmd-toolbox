@@ -15,6 +15,8 @@ Windows 環境で使えるバッチコマンド集です。主に Windows 11 向
   - explorer-settings.cmd
   - restart-explorer.cmd
   - setup.cmd
+- wsl/
+  - install-wsl-al2023.ps1
 
 ## 🛠️ 各スクリプトの説明
 
@@ -83,6 +85,22 @@ Explorer を再起動します。
 ローカルIPアドレスとグローバルIPアドレスを表示します。
 
 - グローバルIP取得にはインターネット接続が必要です。
+
+### 🧰 `wsl/install-wsl-no-distribution.ps1`
+
+Linux を含めずに WSL2 をインストールします。
+ゲストOSのインストール場所を指定したい場合に使用します。
+
+### 🧰 `wsl/install-wsl-al2023.ps1`
+
+WSL に Amazon Linux 2023 をインストールします。
+
+```ps1
+cd wsl
+.\install-wsl-no-distribution.ps1
+.\install-wsl-al2023.ps1 -WslHome C:\wsl
+wsl -d AL2023
+```
 
 ## 🔰 SmartScreen による起動ブロックの回避方法
 
