@@ -103,6 +103,12 @@ cd wsl
 wsl -d AL2023
 ```
 
+AL2023 をアンインストールする場合は、以下のコマンドを実行します。
+
+```ps1
+wsl --unregister AL2023
+```
+
 ## 🔰 SmartScreen による起動ブロックの回避方法
 
 ZIPでダウンロードしてエクスプローラーからコマンドを実行しようとすると Window Defender SmartScreen により起動がブロックされます。

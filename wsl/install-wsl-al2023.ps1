@@ -45,7 +45,7 @@ wsl --import $DistroName $wslDistro "$downloadDir$fileName"
 # 基本的なパッケージインストールとsystemd有効化
 $commandsA = @(
   'dnf update -y',
-  'dnf install -y systemd util-linux iptables libseccomp container-selinux xz dnf-plugins-core',
+  'dnf install -y systemd util-linux iptables libseccomp container-selinux xz dnf-plugins-core procps-ng',
   @'
 cat << 'EOF' > /etc/wsl.conf
 [boot]
