@@ -45,7 +45,7 @@ wsl --import $DistroName $wslDistro "$downloadDir$fileName"
 # 基本的なパッケージインストールとsystemd有効化
 $commandsA = @(
   'dnf update -y',
-  'dnf install -y systemd util-linux iptables libseccomp container-selinux xz dnf-plugins-core',
+  'dnf install -y systemd util-linux iptables libseccomp container-selinux xz dnf-plugins-core glibc-langpack-ja',
   @'
 cat << 'EOF' > /etc/wsl.conf
 [boot]
@@ -59,6 +59,12 @@ if ($LASTEXITCODE -ne 0) {
   Write-Host 'エラーが発生しました。処理を中断します。'
   exit 1
 }
+
+# .bashrcを配置
+$bashrcSource = Join-Path $PSScriptRoot '.bashrc'
+Write-Host ".bashrc を /root/.bashrc にコピー"
+$wslPath = ($PSScriptRoot -replace '\\', '/' -replace '^([A-Za-z]):', '/mnt/$1').ToLower()
+wsl -d $DistroName -- bash -c "cp ${wslPath}/.bashrc /root/.bashrc"
 
 # WSLを再起動してsystemdを有効化
 wsl --shutdown
