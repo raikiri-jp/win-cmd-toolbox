@@ -61,10 +61,9 @@ if ($LASTEXITCODE -ne 0) {
 }
 
 # .bashrcを配置
-$bashrcSource = Join-Path $PSScriptRoot '.bashrc'
 Write-Host ".bashrc を /root/.bashrc にコピー"
-$wslPath = ($PSScriptRoot -replace '\\', '/' -replace '^([A-Za-z]):', '/mnt/$1').ToLower()
-wsl -d $DistroName -- bash -c "cp ${wslPath}/.bashrc /root/.bashrc"
+$bashrcSource = Join-Path $PSScriptRoot '.bashrc'
+Copy-Item -Path $bashrcSource -Destination "\\wsl$\$DistroName\root\.bashrc"
 
 # WSLを再起動してsystemdを有効化
 wsl --shutdown
