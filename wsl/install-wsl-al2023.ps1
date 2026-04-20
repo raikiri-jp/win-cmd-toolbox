@@ -70,7 +70,7 @@ wsl --shutdown
 
 # よく使うコマンドをインストール
 $commandsB = @(
-  'dnf install -y which procps-ng findutils vi vim git wget tar iproute hostname libxcrypt-compat python3'
+  'dnf install -y which procps-ng findutils vi vim git wget tar unzip iproute hostname libxcrypt-compat python3'
 ) -Join ' && '
 Write-Host "RUN: $commandsB"
 wsl -d $DistroName -- bash -c ('set -e; ' + $commandsB)
